@@ -1,21 +1,24 @@
 package com.appslab;
 
-import java.util.Arrays;
-
 public class Main {
 
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(multiplyByLength(new int[]{1, 4, 6, 3, 7, 5})));
+    public static void main (String[] args) {
+        if (Akoze("oko")) {
+            System.out.println("Zhoda");
+        } else {
+            System.out.println("Nezhoda");
+        }
     }
 
-    static int[] multiplyByLength(int[] array) {
-        int x = 0;
-        for (int a = 0; a < array.length; a++) {
-            x = a + 1;
+    public static boolean Akoze(String slovo) {
+        boolean uvidime;
+        String reverse = "";
+        int dlzka = slovo.length();
+        for (int i = dlzka - 1; i >= 0; i--) {
+            reverse = reverse + slovo.charAt(i);
         }
-        for (int i = 0; i < array.length; i++) {
-            array[i] = array[i] * x;
-        }
-        return array;
+
+        uvidime = slovo.equals(reverse);
+        return uvidime;
     }
 }
