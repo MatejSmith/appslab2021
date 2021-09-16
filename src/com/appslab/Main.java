@@ -3,26 +3,17 @@ package com.appslab;
 public class Main {
 
     public static void main(String[] args) {
-    System.out.println(War(new int[]{12, 90, 75}));
+        System.out.println(Ending("abc", "stv"));
     }
-    static int War(int[] array) {
-        int odd = 0;
-        int even = 0;
-        for (int i : array) {
-            if (i % 2 == 0) {
-                odd = odd + i;
-            }
+    static String Ending(String full, String ending){
+        String reverse = "";
+        String second_reverse = "";
+        for (int i = full.length() - 1; i >= 0; i--) {
+            reverse = reverse + full.charAt(i);
         }
-        for (int i : array) {
-            if (i % 2 != 0) {
-                even = even + i;
-            }
+        for (int i = ending.length() - 1; i >= 0; i--) {
+            second_reverse = second_reverse + ending.charAt(i);
         }
-        if (even > odd) {
-            return (even) - (odd);
-        }
-        else {
-            return (odd) - (even);
-        }
+
     }
 }
