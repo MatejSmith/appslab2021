@@ -3,16 +3,20 @@ package com.appslab;
 public class Main {
 
     public static void main(String[] args) {
-        RPS("Scissors", "Paper");
+    System.out.println(Function((new int[]{44, 32, 86, 19})));
     }
 
-    public static void RPS(String player_1, String player_2) {
-        if ((player_1.equals("Rock") && player_2.equals("Scissors")) || (player_1.equals("Paper") && player_2.equals("Rock")) || (player_1.equals("Scissors") && player_2.equals("Paper"))) {
-            System.out.println("Player 1 win");
-        } else if ((player_2.equals("Rock") && player_1.equals("Scissors")) || (player_2.equals("Paper") && player_1.equals("Rock")) || (player_2.equals("Scissors") && player_1.equals("Paper"))) {
-            System.out.println("Player 2 win");
-        } else {
-            System.out.println("Tie");
+    static int Function(int[] array) {
+        int min = array[0];
+        int max = array[0];
+        for (int j : array) {
+            if (j < min)
+                min = j;
         }
+        for (int i : array) {
+            if (i > max)
+                max = i;
+        }
+            return (max) - (min);
     }
 }
