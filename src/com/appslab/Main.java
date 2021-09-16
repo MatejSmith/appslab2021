@@ -1,21 +1,18 @@
 package com.appslab;
 
-import java.util.Arrays;
-
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(multiplyByLength(new int[]{1, 4, 6, 3, 7, 5})));
+        RPS("Scissors", "Paper");
     }
 
-    static int[] multiplyByLength(int[] array) {
-        int x = 0;
-        for (int a = 0; a < array.length; a++) {
-            x = a + 1;
+    public static void RPS(String player_1, String player_2) {
+        if ((player_1.equals("Rock") && player_2.equals("Scissors")) || (player_1.equals("Paper") && player_2.equals("Rock")) || (player_1.equals("Scissors") && player_2.equals("Paper"))) {
+            System.out.println("Player 1 win");
+        } else if ((player_2.equals("Rock") && player_1.equals("Scissors")) || (player_2.equals("Paper") && player_1.equals("Rock")) || (player_2.equals("Scissors") && player_1.equals("Paper"))) {
+            System.out.println("Player 2 win");
+        } else {
+            System.out.println("Tie");
         }
-        for (int i = 0; i < array.length; i++) {
-            array[i] = array[i] * x;
-        }
-        return array;
     }
 }
