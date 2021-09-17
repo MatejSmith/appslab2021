@@ -3,17 +3,10 @@ package com.appslab;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(Ending("abc", "stv"));
+        System.out.println(Ending("appslab", "lab"));
+        System.out.println(Ending("appslab", "Lab"));
     }
-    static String Ending(String full, String ending){
-        String reverse = "";
-        String second_reverse = "";
-        for (int i = full.length() - 1; i >= 0; i--) {
-            reverse = reverse + full.charAt(i);
-        }
-        for (int i = ending.length() - 1; i >= 0; i--) {
-            second_reverse = second_reverse + ending.charAt(i);
-        }
-
+    static boolean Ending(String full, String ending){
+        return full.endsWith(ending);
     }
 }
